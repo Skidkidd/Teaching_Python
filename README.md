@@ -1,9 +1,10 @@
 # Python 3: The Complete Beginner's Course
-<meta http-equiv="refresh" content="0; url=python_lesson_plan.html" />
 
 This repository contains a simple, step-by-step lesson plan designed to teach a complete beginner the fundamentals of Python 3. The course is structured for a one-on-one teaching environment and focuses on making core concepts easy to understand through simple analogies and practical exercises.
 
 I've made this available to the community in the hope that it will help others learn or teach Python, as I believe that learning should be a free resource for all to enjoy.
+
+You can find the full lesson guide [here](https://skidkidd.github.io/Teaching_Python/). 
 
 # ✨ Features
 Teacher Scripts: Each lesson includes a conversational script for you to read aloud, making it easy to present complex ideas in a simple, friendly way.
