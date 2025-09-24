@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 3: The Complete Beginner's Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .lesson-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .code-block {
+            background-color: #010409;
+            border-left: 4px solid #38bdf8;
+        }
+        .new-code {
+            color: #86efac;
+        }
+        .error-explanation {
+            background-color: #2a2d33;
+            border-left: 4px solid #f87171;
+        }
+        .fixed-code {
+            background-color: #0c4a6e;
+            border-left: 4px solid #38bdf8;
+            color: #d1fae5;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+<div class="container mx-auto">
+    <div class="bg-gray-800 p-8 rounded-xl shadow-lg mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-white mb-2">Python 3: The Complete Beginner's Course</h1>
+        <p class="text-center text-gray-400">This document is a complete, printable lesson plan that can be used to teach a beginner Python. Each lesson includes a simple explanation of the core concepts, a working example program, and a practice exercise that builds on the overall project.</p>
+    </div>
+
+    <!-- Lesson 1: Variables -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 1: Variables</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
+            **Goal:** Learn what variables are and how to store different types of data.
+        </p>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **variable** is a labeled container that holds a value.</li>
+            <li>You give a variable a name so you can use its value later.</li>
+            <li>Variables can hold different **data types**, such as numbers, text, or true/false values.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with an analogy:** "Let's start with a big idea: variables. Think of a variable as a container or a box with a label on it. The label is the name, and what's inside is the value. We can change what's in the box, but the label stays the same." </li>
+            <li>**Explain the code:** "Look at the code in the 'Building Project' section. The first line, `character_name = "Elara"`, is like putting the name 'Elara' in a box labeled `character_name`. We can use the word `character_name` later, and the computer will know we mean 'Elara'."</li>
+            <li>**Point out the data types:** "Notice the different types of values we put in the boxes. The name 'Elara' is text, so we put it in quotes. The number `22` has no quotes. The special words `True` and `False` are for yes-or-no questions. These are called **data types**."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: The Character Profile</h3>
+        <p class="text-gray-300 mb-2">This is the start of our project! Create a new file called `my_project.py` and add the following lines of code to it.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"><span class="new-code"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Store Your Favorite Thing</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create three variables to describe your favorite thing. One should be a string, one a number, and one a boolean. Then, print them out.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Example:
+# my_favorite_color = "blue"
+# number_of_shoes = 10
+# has_a_pet = True
+
+# Your variables here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 2: Functions -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 2: Functions</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** This code has a bug! The program crashes because a variable is used before it is created. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+print("Welcome to the adventure, " + character_name + "!")
+character_name = "Elara"
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **NameError**. The `print()` statement tries to use the `character_name` variable before it has been assigned a value. Python reads code from top to bottom, so the variable must be created first.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Move the line that creates the variable to be before the `print()` statement that uses it.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>character_name = "Elara"
+print("Welcome to the adventure, " + character_name + "!")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **function** is a named block of code that you can run again and again.</li>
+            <li>You **define** a function using the `def` keyword.</li>
+            <li>You **call** a function to run its code by using its name followed by parentheses `()`.</li>
+            <li>To use a function from a different file, you must **import** it first.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Before we start today, let's look at this broken code. Can you see why it's not working? The computer tries to use `character_name` before we have given it a value. It's like trying to find something in an empty box."</li>
+            <li>**Introduce functions:** "Today we learn a very important idea called **functions**. A function is like a recipe. You write the recipe one time, and you can use it whenever you want without writing all the steps again. This makes your code cleaner and easier to read."</li>
+            <li>**Explain `def`:** "The word `def` is how we write our recipe. We give it a name, like `welcome_traveler()`. The code that belongs to the function is indented, just like the steps in a recipe. We will also add a line that calls our new function. This will tell the computer to run the recipe."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file from the last lesson. We will add a new function and a line that calls it. The new lines are highlighted in green. When you run the program, the code in the function will run and print the greeting."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: A Reusable Greeting</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a function that welcomes our character.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+
+<span class="new-code"># Lesson 2: Define a function to welcome the traveler
+def welcome_traveler():
+    print("Welcome, adventurer, to the world of Python!")
+
+# Call the function to run the code inside it
+welcome_traveler()</span>
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: The Greeting Function</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `say_hello()` that prints "Hello, adventurer!". Then, call the function three times.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 3: Function Arguments -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 3: Function Arguments</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug. The function is defined, but it is never run. Fix the bug by calling the function so the message prints.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+def say_hello():
+    print("Hello!")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a logical error. The function `say_hello` is defined, but the program never tells it to run. The code simply defines the function and then ends.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Add a line that calls the function by its name followed by parentheses.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>def say_hello():
+    print("Hello!")
+say_hello()</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>An **argument** is a piece of information you give to a function inside the parentheses.</li>
+            <li>Arguments make functions more flexible because they can work with different values.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this broken code. It has a function, but it doesn't do anything. The problem is we wrote the recipe, but we never told the computer to use it. The fix is to call the function by its name."</li>
+            <li>**Explain arguments:** "Last time we learned that functions are like recipes. Now, we'll learn about **arguments**, which are like ingredients. You give a function information it needs to do its job. Look at our new `welcome_traveler()` function. We put a placeholder inside the parentheses, like `name`. This is our ingredient."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file again. We will now update our `welcome_traveler` function to take an argument for a name. We will also add a `character_description` variable. We'll change the line that calls the function to give it the `character_name` variable as its argument. This will let us print a personalized message. The new lines are highlighted in green."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: A Personalized Greeting</h3>
+        <p class="text-gray-300 mb-2">Update your `my_project.py` file to use arguments in your functions. Replace the old code with the new code below.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+
+<span class="new-code"># Lesson 3: Add a character description
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."</span>
+
+# Lesson 2: Define a function to welcome the traveler
+<span class="new-code">def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Call the function to run the code inside it
+welcome_traveler(character_name)</span>
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+<span class="new-code">print("Description: " + character_description)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Greet Someone</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `greet_person()` that takes one argument, `name`. Inside the function, print "Hello, " and the name you passed in. Then, call the function twice with different names.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 4: Numbers -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 4: Numbers</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The `attack()` function below needs two arguments, but only one is given. Fix the code so the function is called correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+def attack(target_name, damage):
+    print("Attacking " + target_name + " for " + str(damage) + " damage.")
+
+attack("Goblin")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **TypeError**. The function `attack()` is defined to accept two arguments, but the call `attack("Goblin")` only provides one. The number of arguments in the function definition must match the number of arguments in the function call.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Provide a second argument in the function call, such as a number or a variable.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>def attack(target_name, damage):
+    print("Attacking " + target_name + " for " + str(damage) + " damage.")
+
+attack("Goblin", 10)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Integers** are whole numbers like `1`, `100`, or `-5`.</li>
+            <li>**Floats** are numbers with a decimal point like `3.14` or `9.99`.</li>
+            <li>You can do math with numbers using operators like `+` (add), `-` (subtract), `*` (multiply), and `/` (divide).</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The function `attack()` needs two ingredients, but we only gave it one. The computer will crash because it doesn't have all the information it needs."</li>
+            <li>**Introduce numbers:** "Numbers are another important data type. We have whole numbers, called **integers** (`int`), and numbers with decimals, called **floats** (`float`)."</li>
+            <li>**Explain math operations:** "Python is like a calculator. We can use the `+`, `-`, `*`, and `/` symbols to do math with our number variables."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file again. We will add three number variables for our character's stats. We will also add a new function that takes our stats as ingredients and prints them out. Look at how we convert the numbers to text using `str()` before we print them out."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Adding Stats</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to give our character some numerical stats.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+
+# Lesson 3: Add a character description
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+
+<span class="new-code"># Lesson 4: Add stats and calculations
+health = 100
+mana = 75.5 # This is a float
+strength = 15</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Call the function to run the code inside it
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+<span class="new-code"># Lesson 4: Add a new function to print stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Call our new function to print the stats
+print_stats(health, mana, strength)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: A Simple Calculation</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `add_two_numbers()` that takes two number arguments, adds them together, and prints the result. Call the function with two numbers.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 5: Boolean Logic - and -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 5: Boolean Logic - `and`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** This code has a bug! It tries to combine a number and a string, which isn't allowed. Fix it so the sentence prints correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+pet_name = "Luna"
+pet_age = 3
+print("My pet " + pet_name + " is " + pet_age + " years old.")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **TypeError**. Python does not know how to join a string (`" is "`) and an integer (`3`) with the `+` operator. To fix this, you must convert the number to a string first.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Use the `str()` function to convert the `pet_age` integer into a string before concatenating it.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>pet_name = "Luna"
+pet_age = 3
+print("My pet " + pet_name + " is " + str(pet_age) + " years old.")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **boolean** is a data type that can only be either `True` or `False`.</li>
+            <li>The word `and` is a logical operator. When you use `and`, both conditions must be `True` for the final result to be `True`.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Here is a bug from the last lesson. The program crashes because it tries to do math on a number that's a string. The quotes around the number tell the computer it's text, not a number."</li>
+            <li>**Explain booleans:** "Today, we're going to learn about a new data type called **booleans**. A boolean can only be one of two things: `True` or `False`. We use booleans to ask the computer a question that has a yes-or-no answer."</li>
+            <li>**Explain `and`:** "The `and` word is for when you need more than one thing to be true. For example, to enter a castle, you need to have a `key` **and** a `pass`. If you have both, you can enter. If you have only one, or none, you cannot enter."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file again. We'll add a new function that takes our character's stats as ingredients and uses `and` to check if they can start a quest. We will also add a new function to call our quest check. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Checking Quest Conditions</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to check if your character is strong and smart enough for a quest.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+<span class="new-code">intelligence = 12</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+<span class="new-code"># Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+<span class="new-code">is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check Login</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `can_login()` that takes a boolean `is_paid` and a boolean `is_active` as arguments. The function should use the `and` operator to return `True` only if the user is both paid and active. Call the function with `True` and `True` and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 6: Boolean Logic - or -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 6: Boolean Logic - `or`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The `is_strong` variable is always `True` because the condition is wrong. Fix it so it correctly checks if the `strength` is greater than or equal to 10.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+strength = 5
+is_strong = strength = 10
+print(is_strong)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **SyntaxError** because the single equal sign `=` is used for assignment, not comparison. To compare if two values are equal, you must use the double equal sign `==`. To check for greater than or equal to, use `>=`.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Change the single equal sign `=` to a greater-than-or-equal-to sign `>=` to correctly compare the values.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>strength = 5
+is_strong = strength >= 10
+print(is_strong)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>The word `or` is a logical operator. When you use `or`, only one of the conditions needs to be `True` for the final result to be `True`.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this broken code. It tries to check if `strength` is 10, but it uses the wrong symbol. The single `=` sign is for giving a value to a variable, not for asking a question. We must use `==` or `>=` to ask a question."</li>
+            <li>**Explain `or`:** "The `or` word is for when you need only one thing to be true. For example, to enter the magic city, you need to have a `magic_key` **or** be a `wizard`. If you have one of those things, you can enter. If you have both, you can also enter."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file again. We'll add a new function that uses the `or` operator to check if our character is ready for a quest. We will then call the new function and print the result. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: A New Quest Condition</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to check if your character is ready for a new quest using the `or` operator.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+<span class="new-code"># Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+<span class="new-code">can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check Access</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `can_access_website()` that takes a boolean `is_admin` and a boolean `is_member` as arguments. Use the `or` operator to return `True` if the user is either an admin or a member. Call the function with `True` and `False` and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 7: Boolean Logic - not -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 7: Boolean Logic - `not`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below checks if the character has mana, but it uses the wrong variable. Fix the code to use the correct variable `has_mana`.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+has_mana = True
+has_strength = False
+can_use_spell = has_mana or has_power
+print(can_use_spell)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **NameError**. The variable `has_power` is used but it was never created. Python doesn't know what `has_power` is, so the program crashes. The intended variable was `has_strength`.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Replace `has_power` with the correct variable name, `has_strength`.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>has_mana = True
+has_strength = False
+can_use_spell = has_mana or has_strength
+print(can_use_spell)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>The word `not` is a logical operator. It reverses a boolean's value. `not True` becomes `False`, and `not False` becomes `True`.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this code. The program crashes because it tries to use a variable that was never created. This is a common typo. The computer doesn't know what `has_power` is. The fix is to change the name to the correct one, `has_strength`."</li>
+            <li>**Introduce `not`:** "Today, we're going to learn about the last logical operator: `not`. This one is very simple. It flips a boolean. If something is `True`, `not` makes it `False`. If it's `False`, `not` makes it `True`."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will add a new function that uses the `not` operator to check if our character is a novice. We will then call the new function and print the result. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: The Novice Check</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to check if your character is a novice using `not`.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+<span class="new-code"># Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+<span class="new-code">is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check the Lights</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `is_dark_outside()` that takes one boolean argument, `is_sunny`. The function should use the `not` operator to return the opposite value. Call the function and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 8: if -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 8: `if`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! The `not` operator is used incorrectly. Fix the code so it correctly checks if the value is NOT a wizard.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+is_wizard = True
+is_not_wizard = not(is_wizard)
+print(is_not_wizard)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The parentheses around `is_wizard` are not necessary. The `not` operator works on a single boolean value directly. The code will run, but it's not the correct way to use the operator.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Remove the unnecessary parentheses around `is_wizard`.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>is_wizard = True
+is_not_wizard = not is_wizard
+print(is_not_wizard)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>An `if` statement allows your program to make a decision.</li>
+            <li>If the condition after the `if` is `True`, the code inside the block will run.</li>
+            <li>Remember to use a colon `:` at the end of the `if` line, and indent the code inside the block.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this code. The `not` operator is used incorrectly. The parentheses are not needed. The correct way is to use `not` directly on the boolean value."</li>
+            <li>**Introduce `if`:** "Today, we're going to learn how to make our program smart. We'll use an `if` statement, which is like a yes-or-no question. If the answer is yes (`True`), the computer will do something. If the answer is no (`False`), it will skip the code."</li>
+            <li>**Explain syntax:** "The `if` statement has a special way of being written. We use the word `if`, then our condition, then a colon `:`. The code we want to run is indented. This is how Python knows what code belongs to the `if` statement."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We'll add a new function that takes our character's stats as ingredients and uses an `if` statement to check if they have enough mana to cast a spell. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Checking Mana</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a function that checks if our character can cast a spell.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+<span class="new-code"># Lesson 8: Add an if statement to check mana
+def cast_spell_if_mana(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 10:
+        print("You have enough mana to cast a fireball!")
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+<span class="new-code">cast_spell_if_mana(mana)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check the Temperature</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `check_temperature()` that takes one number argument, `temp`. Inside the function, use an `if` statement to print "It's a hot day!" only if the temperature is above 30. Call the function with `35`.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 9: else -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 9: `else`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! The `if` statement is missing a colon, which causes an error. Fix the code by adding the colon so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+is_player_dead = False
+if is_player_dead
+    print("Game over!")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **SyntaxError**. All `if` statements in Python must end with a colon `:`. Without it, the computer doesn't know where the condition ends and the code block begins.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Add a colon `:` at the end of the `if` line.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>is_player_dead = False
+if is_player_dead:
+    print("Game over!")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>The `else` statement is used with an `if` statement to provide a backup plan.</li>
+            <li>If the `if` condition is `False`, the code inside the `else` block will run.</li>
+            <li>`else` must come right after an `if` statement and also has a colon `:`.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The `if` statement is missing a colon. Remember, all `if` statements and functions must end with a colon. It's how the computer knows the line is over."</li>
+            <li>**Introduce `else`:** "Last time we learned about `if` statements. Now, we'll learn about `else`, which is like a 'backup plan'. The computer will look at the `if` statement first. If it is `True`, it will run that code. If it is `False`, it will skip that code and go straight to the `else` block."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now update our `cast_spell_if_mana()` function to use an `else` statement. This will allow us to print a message whether or not we have enough mana. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Adding an `else` Condition</h3>
+        <p class="text-gray-300 mb-2">Update your `my_project.py` file to include an `else` statement in your function.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+<span class="new-code">def cast_spell_if_mana(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 10:
+        print("You have enough mana to cast a fireball!")
+    else:
+        print("You do not have enough mana!")</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+cast_spell_if_mana(mana)
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check a Number</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `is_high_score()` that takes one number argument, `score`, and returns `True` if the score is greater than 100, and `False` otherwise. Call this function with a number and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+    
+    <!-- Lesson 10: elif -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 10: `elif`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to use an `else` statement without an `if` statement. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+mana = 50
+else:
+    print("You do not have enough mana!")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **SyntaxError**. An `else` statement must always follow an `if` statement. It cannot exist on its own.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Add an `if` statement before the `else` statement.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>mana = 50
+if mana >= 10:
+    print("You have enough mana to cast a spell.")
+else:
+    print("You do not have enough mana!")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>The `elif` statement is short for "else if".</li>
+            <li>`elif` allows you to check for more than one condition.</li>
+            <li>It is always used between an `if` and an `else` statement.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The `else` statement is by itself, and the computer doesn't know what to do. Remember, `else` is a backup plan, so it always needs a main plan (`if`) to go with it."</li>
+            <li>**Introduce `elif`:** "The `if` and `else` statements are great, but what if we need to check more than two things? That's what `elif` is for. We can put as many `elif` statements as we need to make our program smarter."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now update our `cast_spell_if_mana()` function to use an `elif` statement. This will allow us to check if we can cast a bigger spell. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Adding a Stronger Spell</h3>
+        <p class="text-gray-300 mb-2">Update your `my_project.py` file to include an `elif` statement in your function.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+<span class="new-code">def cast_spell_if_mana(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You have enough mana to cast a lightning bolt!")
+    elif mana >= 10:
+        print("You have enough mana to cast a fireball!")
+    else:
+        print("You do not have enough mana!")</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+cast_spell_if_mana(mana)
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Check a Grade</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `check_grade()` that takes a number argument, `grade`. Use an `if`, `elif`, and `else` statement to print:
+            * "You got an A!" if the grade is 90 or higher.
+            * "You got a B!" if the grade is 80 or higher.
+            * "You got a C or lower." if the grade is below 80.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 11: `return` -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 11: `return`</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! The `elif` statement is not correctly indented, which causes an error. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+grade = 85
+if grade >= 90:
+    print("You got an A!")
+elif grade >= 80:
+print("You got a B!")
+else:
+    print("You got a C or lower.")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is an **IndentationError**. The line `print("You got a B!")` is not indented, so Python doesn't know that it belongs to the `elif` statement. All code inside an `if`, `elif`, or `else` statement must be indented by four spaces.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Add four spaces before the `print()` statement to indent it correctly.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>grade = 85
+if grade >= 90:
+    print("You got an A!")
+elif grade >= 80:
+    print("You got a B!")
+else:
+    print("You got a C or lower.")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>The `return` statement is used to give a value back from a function.</li>
+            <li>When a function reaches a `return` statement, it stops running immediately and sends the value back.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this code. The second `print` line is not indented, and the computer is confused. Remember, indentation is how Python knows what code belongs to an `if`, `elif`, or `else`."</li>
+            <li>**Introduce `return`:** "Today, we're going to learn about `return`. A `return` statement is how a function gives something back. It's like asking a friend for a pen, and they give you the pen. Our function will give us a value back so we can use it in other parts of our program."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will update our `cast_spell_if_mana()` function to use a `return` statement. This will let us get the new amount of mana back after we cast a spell. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Returning a Value</h3>
+        <p class="text-gray-300 mb-2">Update your `my_project.py` file to include a `return` statement in your function.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+<span class="new-code">def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+<span class="new-code">new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: A Simple Calculation</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `add_numbers()` that takes two arguments, `num1` and `num2`. Inside the function, add them together and `return` the total. Call the function with two numbers and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 12: Function Scope -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 12: Function Scope</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! The `return` statement is inside the `if` and `else` blocks, which makes the code crash. Fix the code so it returns a value and can be printed correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+def check_temp(temp):
+    if temp > 30:
+        print("It's a hot day!")
+        return True
+    else:
+        print("It's a cool day.")
+        return False
+
+is_hot = check_temp(25)
+print(is_hot)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a logical error. The `return` statement is inside the `if` and `else` blocks, which makes the code harder to read and debug. The `return` statement should be outside the `if` statement.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Move the `return` statement outside the `if` and `else` blocks.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>def check_temp(temp):
+    if temp > 30:
+        result = True
+    else:
+        result = False
+    return result
+
+is_hot = check_temp(25)
+print(is_hot)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Scope** is the area where a variable can be used.</li>
+            <li>Variables created inside a function are **local** and can only be used inside that function.</li>
+            <li>Variables created outside of a function are **global** and can be used anywhere in the program.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this code. The `return` statement is repeated. We can fix this by having only one `return` statement at the end of the function. The `return` statement should not be inside the `if` statement."</li>
+            <li>**Introduce scope:** "Today we're going to learn about **scope**. A variable's scope is the area where it can be used. Variables that are inside a function are like secrets; only the function knows about them. Variables that are outside of a function are like public knowledge; everyone can use them."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now create a new function that takes our character's mana as an argument and prints a message about it. We will also add a variable inside the function and a variable outside the function to see how scope works. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Scope Check</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to demonstrate how scope works.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+<span class="new-code"># Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))
+
+<span class="new-code">check_local_scope(new_mana)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: The Experience Points</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a global variable called `xp` set to `0`. Create a function called `gain_xp()` that adds `10` to `xp` and prints a message. Make sure to use the `global` keyword to change the value. Call the function twice and then print the final value of `xp`.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 13: Lists Part 1 -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 13: Lists Part 1</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to use a local variable outside of its function. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+def calculate_total():
+    total_cost = 100
+print(total_cost)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **NameError**. The variable `total_cost` is a local variable because it was created inside the `calculate_total()` function. You cannot use a local variable outside of its function. The fix is to move the variable outside the function to make it a global variable.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Move the `total_cost` variable outside the function to make it a global variable.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>total_cost = 100
+def calculate_total():
+    print(total_cost)
+calculate_total()</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **list** is a container that holds a collection of items in a specific order.</li>
+            <li>Lists are defined with square brackets `[]`.</li>
+            <li>Each item in a list has an **index** starting from `0`. You can access an item by its index.</li>
+            <li>You can add a new item to the end of a list using the `.append()` method.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The program crashes because it tries to use a variable that is inside a function. Remember, a variable inside a function is a secret, and only that function can use it. The fix is to move the variable outside the function."</li>
+            <li>**Introduce lists:** "Today, we're going to learn about **lists**. A list is like a shopping list. You can put many things on it, and the order matters. We use a list to store multiple items in a single variable."</li>
+            <li>**Explain indexing and appending:** "Each item in a list has a number, starting from `0`. This is called its **index**. We use the index to get an item from the list. We can also add new items to the end of a list using a special command called `.append()`."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We'll add a list to hold our character's inventory. We'll then create a new function that adds a new item to the inventory and prints the items. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Your Inventory</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create your character's inventory.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+<span class="new-code">inventory = ["wooden staff", "mana potion"]</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+<span class="new-code"># Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    print(inventory)</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+<span class="new-code"># Call our new function to print the inventory
+print_inventory(inventory)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Your Shopping List</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a list called `shopping_list` with two items. Add a third item to the list using `.append()`. Print the full list and then print only the first item in the list.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 14: Lists Part 2 -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 14: Lists Part 2</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to use a `return` statement in a `print()` statement, but the function does not return anything. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+def say_hello(name):
+    print("Hello, " + name + "!")
+
+print("The result is: " + say_hello("Alice"))
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **TypeError**. The `say_hello()` function does not `return` a value. When you try to add the result to a string, Python gets confused because the function returns `None` (which means nothing). `None` cannot be added to a string.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Add a `return` statement to the function to return a string, or simply call the function without using the `print()` statement.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>def say_hello(name):
+    return "Hello, " + name + "!"
+
+result = say_hello("Alice")
+print("The result is: " + result)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>You can change an item in a list by using its index.</li>
+            <li>You can remove an item from a list using the `.remove()` method.</li>
+            <li>You can also get the number of items in a list using the `len()` function.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The program crashes because the `say_hello()` function doesn't give a value back. We must use a `return` statement if we want to use a function's result."</li>
+            <li>**Introduce list methods:** "Last time we learned about lists. Today, we'll learn about other things we can do with lists. We can change an item, remove an item, or even count how many items are in the list."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will update the `print_inventory` function to remove an item, change an item, and print the number of items in the list. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Inventory Management</h3>
+        <p class="text-gray-300 mb-2">Update the `print_inventory` function in your `my_project.py` file to manage our character's items.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+inventory = ["wooden staff", "mana potion"]
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+<span class="new-code"># Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+<span class="new-code"># Call our new function to print the inventory
+print_inventory(inventory)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Manage Your Shopping List</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a list called `shopping_list` with three items. Change the second item to `"milk"`. Remove the first item. Print the final list and its size.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 15: Tuples -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 15: Tuples</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to use the wrong variable name. Fix the code so it prints the number of items correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+shopping_list = ["bread", "eggs", "milk"]
+number_of_items = len(my_list)
+print("You have " + str(number_of_items) + " items.")
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **NameError**. The `len()` function tries to use a variable called `my_list` which was never created. The correct variable name is `shopping_list`.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Change the variable name inside the `len()` function to `shopping_list`.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>shopping_list = ["bread", "eggs", "milk"]
+number_of_items = len(shopping_list)
+print("You have " + str(number_of_items) + " items.")</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **tuple** is a container that holds a collection of items in a specific order.</li>
+            <li>Tuples are defined with parentheses `()`.</li>
+            <li>Unlike lists, **tuples are immutable**, which means you cannot change, add, or remove items after the tuple is created.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The code crashes because it's using the wrong name for the list. This is a common typo. The computer doesn't know what `my_list` is. The fix is to change the name to the correct one, `shopping_list`."</li>
+            <li>**Introduce tuples:** "Today, we're going to learn about **tuples**. A tuple is like a list, but it cannot be changed. This is useful for things that should not change, like a character's starting position in a game."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We'll add a tuple to store our character's starting position. We will then create a new function that takes the tuple as an argument and prints the position. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Player Position</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a tuple for your character's starting position.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+inventory = ["wooden staff", "mana potion"]
+
+<span class="new-code"># Lesson 15: Create a tuple for our character's position
+player_position = (10, 20)</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+# Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))
+
+<span class="new-code"># Lesson 15: Add a new function to print the player's position
+def print_player_position(position):
+    print("\n--- PLAYER POSITION ---")
+    print("Current position: x=" + str(position[0]) + ", y=" + str(position[1]))</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+print_inventory(inventory)
+
+<span class="new-code"># Call our new function to print the player's position
+print_player_position(player_position)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: The Coordinates</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a tuple called `coordinates` with three numbers. Print the tuple and then print only the second number from the tuple.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 16: Sets -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 16: Sets</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to change an item in a tuple, which isn't allowed. Fix the code so it prints correctly without changing the tuple.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+player_stats = ("Elara", 22, 100)
+player_stats[1] = 23
+print(player_stats)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **TypeError**. Tuples are immutable, which means you cannot change an item after the tuple is created. The program crashes because it's not allowed to change the age in the tuple.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** You cannot change the tuple. Instead, you can print the original tuple or create a new one with the updated value.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>player_stats = ("Elara", 22, 100)
+print(player_stats)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **set** is a container that holds a collection of unique, unordered items.</li>
+            <li>Sets are defined with curly braces `{}`.</li>
+            <li>A set will automatically remove duplicate items.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The code crashes because it's trying to change a tuple. Remember, tuples are a special kind of container that cannot be changed once they are created."</li>
+            <li>**Introduce sets:** "Today, we're going to learn about **sets**. A set is like a list, but it's different in two ways: it only holds unique items, and it does not keep them in a specific order. This is useful for things like a list of skills that should not have duplicates."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now add a set to hold our character's skills. We'll then add a new function that adds a new skill and checks if the character has a specific skill. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Your Skills</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a set for your character's skills.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character_name = "Elara"
+character_age = 22
+is_wizard = True
+character_description = "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells."
+health = 100
+mana = 75.5 # This is a float
+strength = 15
+intelligence = 12
+inventory = ["wooden staff", "mana potion"]
+player_position = (10, 20)
+<span class="new-code">
+# Lesson 16: Create a set for our character's skills
+skills = {"fireball", "healing", "stealth"}</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+# Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))
+
+# Lesson 15: Add a new function to print the player's position
+def print_player_position(position):
+    print("\n--- PLAYER POSITION ---")
+    print("Current position: x=" + str(position[0]) + ", y=" + str(position[1]))
+
+<span class="new-code"># Lesson 16: Add a new function to print our skills
+def print_skills(skills):
+    print("\n--- SKILLS ---")
+    print("Your skills are: " + str(skills))
+    print("Do you have the 'stealth' skill? " + str("stealth" in skills))</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character_name)
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character_name)
+print("Age: " + str(character_age))
+print("Is a wizard? " + str(is_wizard))
+print("Description: " + character_description)
+
+print_stats(health, mana, strength)
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(strength)
+print("Is " + character_name + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(strength, intelligence)
+print("Is " + character_name + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(is_wizard, intelligence)
+print("Can " + character_name + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(is_wizard, strength)
+print("Is " + character_name + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(mana)
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+print_inventory(inventory)
+
+print_player_position(player_position)
+
+<span class="new-code"># Call our new function to print our skills
+print_skills(skills)</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Your Favorite Movies</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a set called `favorite_movies` with three movie titles. Add a fourth movie that is a duplicate of one of the first three. Print the set to show that it only contains unique movies. Then, check if you have a new movie called `"The Matrix"` and print the result.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 17: Dictionaries -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 17: Dictionaries</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to add a duplicate item to a set, but the set removes it. Fix the code so it prints all the items, including the duplicate.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+favorite_movies = {"Matrix", "Avatar"}
+favorite_movies.add("Matrix")
+print(favorite_movies)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a logical one. A set is designed to only hold unique items, so when you add a duplicate, it is ignored. The code doesn't crash, but it doesn't do what you expect it to do.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** To hold all items, including duplicates, you should use a **list** instead of a set.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>favorite_movies = ["Matrix", "Avatar"]
+favorite_movies.append("Matrix")
+print(favorite_movies)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **dictionary** is a container that holds data in `key: value` pairs.</li>
+            <li>Dictionaries are defined with curly braces `{}`.</li>
+            <li>You can access a value by using its key.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. We are trying to add a duplicate movie to a set, but it gets ignored. Remember, a set only keeps unique items. To have duplicates, we need to use a list."</li>
+            <li>**Introduce dictionaries:** "Today, we're going to learn about **dictionaries**. A dictionary is like a real dictionary. You look up a word (the **key**), and you get the definition (the **value**). This is a great way to store information about a person or an object."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will update our character profile to a dictionary so we can store all of our character's information in a single variable. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Character Dictionary</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a dictionary for your character.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+<span class="new-code">character = {
+    "name": "Elara",
+    "age": 22,
+    "is_wizard": True,
+    "description": "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells.",
+    "health": 100,
+    "mana": 75.5,
+    "strength": 15,
+    "intelligence": 12,
+    "inventory": ["wooden staff", "mana potion"],
+    "position": (10, 20),
+    "skills": {"fireball", "healing", "stealth"}
+}</span>
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+# Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))
+
+# Lesson 15: Add a new function to print the player's position
+def print_player_position(position):
+    print("\n--- PLAYER POSITION ---")
+    print("Current position: x=" + str(position[0]) + ", y=" + str(position[1]))
+
+# Lesson 16: Add a new function to print our skills
+def print_skills(skills):
+    print("\n--- SKILLS ---")
+    print("Your skills are: " + str(skills))
+    print("Do you have the 'stealth' skill? " + str("stealth" in skills))
+
+# Call the functions to run the code inside them
+<span class="new-code">welcome_traveler(character["name"])</span>
+
+print("--- CHARACTER PROFILE ---")
+<span class="new-code">print("Name: " + character["name"])
+print("Age: " + str(character["age"]))
+print("Is a wizard? " + str(character["is_wizard"]))
+print("Description: " + character["description"])</span>
+
+<span class="new-code">print_stats(character["health"], character["mana"], character["strength"])</span>
+
+print("\n--- CONDITION CHECK ---")
+<span class="new-code">is_strong_enough = check_strength(character["strength"])
+print("Is " + character["name"] + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(character["strength"], character["intelligence"])
+print("Is " + character["name"] + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(character["is_wizard"], character["intelligence"])
+print("Can " + character["name"] + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(character["is_wizard"], character["strength"])
+print("Is " + character["name"] + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(character["mana"])
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+print_inventory(character["inventory"])
+
+print_player_position(character["position"])
+
+print_skills(character["skills"])</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Your Address Book</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a dictionary called `contact` with three key-value pairs: `"name"`, `"phone"`, and `"email"`. Change the value of the `"phone"` key, and then print the entire dictionary.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 18: Loops Part 1 (for) -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 18: Loops Part 1 (`for`)</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to access a key that does not exist in the dictionary. Fix the code so it runs correctly.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+player_profile = { "name": "Link", "age": 18 }
+print(player_profile["level"])
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **KeyError**. The dictionary `player_profile` does not have a key named `"level"`. You can only access a key that has already been created in the dictionary.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Either add the `"level"` key to the dictionary or print a key that already exists, such as `"name"` or `"age"`.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>player_profile = { "name": "Link", "age": 18, "level": 1 }
+print(player_profile["level"])</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A **loop** is used to repeat a block of code multiple times.</li>
+            <li>A `for` loop is used to loop through a sequence (like a list, tuple, or string) and do something for each item.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The code crashes because it's trying to get a value from a dictionary using a key that doesn't exist. Remember, you can only look up something that is already in the dictionary."</li>
+            <li>**Introduce `for` loops:** "Today, we're going to learn about **loops**. A loop is like a robot that does the same thing over and over. A `for` loop is great for when you want to do something for every single item in a list or another container."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now add a new function that uses a `for` loop to print each item in our character's inventory. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: Inventory Loop</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a `for` loop that prints each item in your inventory.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character = {
+    "name": "Elara",
+    "age": 22,
+    "is_wizard": True,
+    "description": "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells.",
+    "health": 100,
+    "mana": 75.5,
+    "strength": 15,
+    "intelligence": 12,
+    "inventory": ["wooden staff", "mana potion"],
+    "position": (10, 20),
+    "skills": {"fireball", "healing", "stealth"}
+}
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+# Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))
+
+# Lesson 15: Add a new function to print the player's position
+def print_player_position(position):
+    print("\n--- PLAYER POSITION ---")
+    print("Current position: x=" + str(position[0]) + ", y=" + str(position[1]))
+
+# Lesson 16: Add a new function to print our skills
+def print_skills(skills):
+    print("\n--- SKILLS ---")
+    print("Your skills are: " + str(skills))
+    print("Do you have the 'stealth' skill? " + str("stealth" in skills))
+
+<span class="new-code"># Lesson 18: Add a for loop to print each item
+def print_each_item(inventory):
+    print("\n--- ITEMS FOUND ---")
+    for item in inventory:
+        print("Found a " + item)</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character["name"])
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character["name"])
+print("Age: " + str(character["age"]))
+print("Is a wizard? " + str(character["is_wizard"]))
+print("Description: " + character["description"])
+
+print_stats(character["health"], character["mana"], character["strength"])
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(character["strength"])
+print("Is " + character["name"] + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(character["strength"], character["intelligence"])
+print("Is " + character["name"] + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(character["is_wizard"], character["intelligence"])
+print("Can " + character["name"] + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(character["is_wizard"], character["strength"])
+print("Is " + character["name"] + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(character["mana"])
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+print_inventory(character["inventory"])
+
+print_player_position(character["position"])
+
+print_skills(character["skills"])
+
+<span class="new-code"># Call our new function to loop through the inventory
+print_each_item(character["inventory"])</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Your Favorite Movies</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a list called `favorite_movies` with three movie titles. Use a `for` loop to print each movie in the list.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+    <!-- Lesson 19: Loops Part 2 (while) -->
+    <div class="lesson-card rounded-xl p-6 sm:p-8 mb-8 shadow-lg">
+        <h2 class="text-2xl font-semibold text-sky-400 mb-4">Lesson 19: Loops Part 2 (`while`)</h2>
+        <hr class="border-t border-gray-700 mb-4">
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💡 Common Mistake: Fixing a Bug</h3>
+        <p class="text-gray-300 mb-2">**Task:** The code below has a bug! It tries to use a `for` loop on a number, which isn't allowed. Fix the code so it correctly counts to 5.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Find the bug and fix it.
+for number in 5:
+    print(number)
+</code></pre>
+
+        <div class="error-explanation rounded-lg p-4 mt-4">
+            <h4 class="text-lg font-semibold text-red-300 mb-2">Solution:</h4>
+            <p class="text-sm text-gray-200 mb-2">The bug is a **TypeError**. A `for` loop needs a container to loop through, not a single number. To loop a specific number of times, you can use the `range()` function, which creates a list of numbers to loop through.</p>
+            <p class="text-sm text-gray-200 mb-2">**Fix:** Use `range(5)` to create a list of numbers from 0 to 4.</p>
+            <pre class="fixed-code rounded-lg p-3 font-mono text-sm overflow-x-auto"><code>for number in range(5):
+    print(number)</code></pre>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">📝 Core Concepts</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>A `while` loop is used to repeat a block of code as long as a condition is `True`.</li>
+            <li>You must have a way to make the condition `False` inside the loop, or it will run forever.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">👨‍🏫 Teacher Script</h3>
+        <ul class="list-disc list-inside space-y-2 mb-4 text-gray-300">
+            <li>**Start with the bug:** "Look at this bug. The code crashes because a `for` loop needs a list of items to go through. It doesn't know what to do with a single number. We must use a list or the `range()` function to tell the loop what to do."</li>
+            <li>**Introduce `while` loops:** "A `for` loop is great, but sometimes we don't know how many times we need to loop. That's what a `while` loop is for. A `while` loop will keep running as long as a condition is `True`. It's like saying, 'keep walking while you have enough health'."</li>
+            <li>**Walk through the building project:** "Open your `my_project.py` file. We will now add a new function that uses a `while` loop to simulate an adventurer walking. We will also add a `break` statement to stop the loop when a condition is met. The green lines are what we will add."</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-200 mb-2">💻 Building Project: A Journey</h3>
+        <p class="text-gray-300 mb-2">Add these new lines of code to your `my_project.py` file to create a `while` loop that simulates a journey.</p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># my_project.py
+# Lesson 1: Create a basic character profile
+character = {
+    "name": "Elara",
+    "age": 22,
+    "is_wizard": True,
+    "description": "A powerful young wizard who grew up in the Sunken City of Azure. She is known for her fiery spirit and even fierier spells.",
+    "health": 100,
+    "mana": 75.5,
+    "strength": 15,
+    "intelligence": 12,
+    "inventory": ["wooden staff", "mana potion"],
+    "position": (10, 20),
+    "skills": {"fireball", "healing", "stealth"}
+}
+
+# Lesson 2: Define a function to welcome the traveler
+def welcome_traveler(name):
+    print("Welcome, " + name + ", to the world of Python!")
+
+# Lesson 3: Add a function to print the stats
+def print_stats(health, mana, strength):
+    attack_damage = strength * 2
+    mana_after_spell = mana - 10.0
+
+    print("--- CHARACTER STATS ---")
+    print("Health: " + str(health))
+    print("Mana: " + str(mana))
+    print("Attack Damage: " + str(attack_damage))
+    print("Mana left after spell: " + str(mana_after_spell))
+
+# Lesson 4: Add a function to check a condition and return a boolean
+def check_strength(strength):
+    is_strong_enough = strength > 10
+    return is_strong_enough
+
+# Lesson 5: Define a function to check a quest condition
+def check_quest_condition_and(strength, intelligence):
+    is_ready_for_quest = strength > 10 and intelligence > 10
+    return is_ready_for_quest
+
+# Lesson 6: Define a new function with an 'or' condition
+def check_quest_condition_or(is_wizard, intelligence):
+    can_cast_spell = intelligence > 15 or is_wizard
+    return can_cast_spell
+
+# Lesson 7: Define a new function with a 'not' condition
+def check_novice(is_wizard, strength):
+    is_novice = not is_wizard and strength < 10
+    return is_novice
+
+# Lesson 8: Add an if statement to check mana
+# Lesson 9: Add an else and elif statement to check mana
+def cast_spell_with_return(mana):
+    print("\n--- CASTING SPELL ---")
+    if mana >= 50:
+        print("You cast a lightning bolt! (-50 mana)")
+        return mana - 50.0
+    elif mana >= 10:
+        print("You cast a fireball! (-10 mana)")
+        return mana - 10.0
+    else:
+        print("You do not have enough mana!")
+        return mana
+
+# Lesson 12: Demonstrate scope
+# This variable can be used anywhere. It is a GLOBAL variable.
+adventure_mode = True
+
+def check_local_scope(mana):
+    # This variable can only be used inside this function. It is a LOCAL variable.
+    mana_is_low = mana < 20
+    print("\n--- SCOPE CHECK ---")
+    print("Your mana is low: " + str(mana_is_low))
+    # We can use a global variable here.
+    print("Are we in adventure mode? " + str(adventure_mode))
+
+# Lesson 13: Add a new function to print inventory
+def print_inventory(inventory):
+    print("\n--- INVENTORY ---")
+    inventory.append("magic ring") # add a new item
+    inventory.remove("wooden staff") # remove an item
+    inventory[0] = "battle axe" # change the first item
+    print(inventory)
+    print("Number of items: " + str(len(inventory)))
+
+# Lesson 15: Add a new function to print the player's position
+def print_player_position(position):
+    print("\n--- PLAYER POSITION ---")
+    print("Current position: x=" + str(position[0]) + ", y=" + str(position[1]))
+
+# Lesson 16: Add a new function to print our skills
+def print_skills(skills):
+    print("\n--- SKILLS ---")
+    print("Your skills are: " + str(skills))
+    print("Do you have the 'stealth' skill? " + str("stealth" in skills))
+
+# Lesson 18: Add a for loop to print each item
+def print_each_item(inventory):
+    print("\n--- ITEMS FOUND ---")
+    for item in inventory:
+        print("Found a " + item)
+
+<span class="new-code"># Lesson 19: Add a while loop to simulate a journey
+def take_a_journey(health):
+    print("\n--- JOURNEY ---")
+    steps = 0
+    while health > 50:
+        print("You take a step. Health is " + str(health))
+        health -= 10
+        steps += 1
+    print("You have completed your journey in " + str(steps) + " steps.")</span>
+
+# Call the functions to run the code inside them
+welcome_traveler(character["name"])
+
+print("--- CHARACTER PROFILE ---")
+print("Name: " + character["name"])
+print("Age: " + str(character["age"]))
+print("Is a wizard? " + str(character["is_wizard"]))
+print("Description: " + character["description"])
+
+print_stats(character["health"], character["mana"], character["strength"])
+
+print("\n--- CONDITION CHECK ---")
+is_strong_enough = check_strength(character["strength"])
+print("Is " + character["name"] + " strong enough? " + str(is_strong_enough))
+
+is_ready = check_quest_condition_and(character["strength"], character["intelligence"])
+print("Is " + character["name"] + " ready for the quest? (and) " + str(is_ready))
+
+can_cast_spell = check_quest_condition_or(character["is_wizard"], character["intelligence"])
+print("Can " + character["name"] + " cast a spell? (or) " + str(can_cast_spell))
+
+is_novice = check_novice(character["is_wizard"], character["strength"])
+print("Is " + character["name"] + " a novice? (not) " + str(is_novice))
+
+new_mana = cast_spell_with_return(character["mana"])
+print("Mana left: " + str(new_mana))
+
+check_local_scope(new_mana)
+
+print_inventory(character["inventory"])
+
+print_player_position(character["position"])
+
+print_skills(character["skills"])
+
+print_each_item(character["inventory"])
+
+<span class="new-code"># Call our new function to simulate a journey
+take_a_journey(character["health"])</span>
+</code></pre>
+
+        <h3 class="text-xl font-bold text-gray-200 mt-6 mb-2">👩‍💻 Your Turn: Countdown</h3>
+        <p class="text-gray-300 mb-2">
+            **Task:** Create a function called `countdown()`. Inside the function, create a variable called `count` set to `5`. Use a `while` loop to print the value of `count` and subtract 1 from it. The loop should stop when `count` is 0.
+        </p>
+        <pre class="code-block rounded-lg p-4 font-mono text-sm overflow-x-auto"><code class="text-gray-200"># Your code here.
+</code></pre>
+    </div>
+
+</div>
+
+</body>
+</html>
