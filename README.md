@@ -18,7 +18,7 @@ Hands-On Exercises: Standalone "Your Turn" tasks at the end of each lesson provi
 Clear Structure: The entire course is laid out in a single, well-organized HTML file, making it easy to navigate and follow.
 
 # 🚀 How to Use This Course
-Start by opening the python_lesson_plan.html file in your web browser.
+Start by opening the site [here](https://skidkidd.github.io/Teaching_Python/) or downloading the html file.
 
 Read the Teacher Script for Lesson 1 to the student.
 
